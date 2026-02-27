@@ -16,33 +16,33 @@ Artado Developers platformu, geliştiricilerin projelerini paylaşabileceği, y�
 
 ---
 
-## 🚀 Özellikler
+## Özellikler
 
 ### Kullanıcı Özellikleri
-- ✅ Kullanıcı kayıt ve giriş sistemi
-- ✅ Profil yönetimi
-- ✅ Proje oluşturma ve yönetimi
-- ✅ Proje gizlilik ayarları (onay sistemi ile)
-- ✅ Workshop entegrasyonu
-- ✅ Yorum ve değerlendirme sistemi
-- ✅ Duyuru sistemi
-- ✅ Todo list yönetimi
+-  Kullanıcı kayıt ve giriş sistemi
+-  Profil yönetimi
+-  Proje oluşturma ve yönetimi
+-  Proje gizlilik ayarları (onay sistemi ile)
+-  Workshop entegrasyonu
+-  Yorum ve değerlendirme sistemi
+-  Duyuru sistemi
+-  Todo list yönetimi
 
 ### Yönetici Özellikleri
-- ✅ Kullanıcı yönetimi
-- ✅ Proje yönetimi
-- ✅ Gizlilik istekleri onay sistemi
-- ✅ Yorum yönetimi ve moderasyon
-- ✅ İstatistikler ve raporlama
-- ✅ Duyuru yayınlama
+-  Kullanıcı yönetimi
+-  Proje yönetimi
+-  Gizlilik istekleri onay sistemi
+-  Yorum yönetimi ve moderasyon
+-  İstatistikler ve raporlama
+-  Duyuru yayınlama
 
 ### Teknik Özellikler
-- ✅ PHP 8+ ve PDO ile veritabanı yönetimi
-- ✅ Modern TailwindCSS arayüz
-- ✅ Responsive tasarım
-- ✅ Email bildirim sistemi (TLS SMTP)
-- ✅ Güvenli oturum yönetimi
-- ✅ Dosya yükleme sistemi
+-  PHP 8+ ve PDO ile veritabanı yönetimi
+-  Modern TailwindCSS arayüz
+-  Responsive tasarım
+-  Email bildirim sistemi (TLS SMTP)
+-  Güvenli oturum yönetimi
+-  Dosya yükleme sistemi
 
 ---
 
@@ -113,7 +113,7 @@ APP_URL=https://devs.artado.xyz
 
 ---
 
-## 🗄️ Veritabanı Yapısı
+##  Veritabanı Yapısı
 
 ### Ana Tablolar
 
@@ -213,7 +213,7 @@ devs/
 
 ---
 
-## 🎛️ Yönetim Paneli
+##  Yönetim Paneli
 
 Admin paneline erişmek için:
 1. Admin kullanıcı ile giriş yapın
@@ -288,20 +288,20 @@ mysql -u root -p artadodevs < clean_database.sql
 # Şifre sıfırlama fonksiyonunu deneyin
 ```
 
-### 3. 🖼️ Logo Dosyası
+### 3.  Logo Dosyası
 ```bash
 # logo.png dosyasının ana dizinde olduğundan emin olun
 ls -la logo.png
 ```
 
-### 4. 🔧 İzinler
+### 4.  İzinler
 ```bash
 # Dosya izinlerini kontrol edin
 chmod -R 755 .
 chmod -R 777 public/uploads/
 ```
 
-### 5. 🧪 Test Etmek
+### 5.  Test Etmek
 - Kullanıcı kaydı ve giriş
 - Proje oluşturma ve gizlilik ayarları
 - Workshop yorum sistemi
@@ -325,22 +325,5 @@ Bu proje MIT lisansı altında dağıtılmaktadır.
 
 ---
 
-## 🔄 Versiyon Geçmişi
-
-### v2.0.0 (Güncel)
-- ✅ Proje gizlilik sistemi eklendi
-- ✅ Yorum ve değerlendirme sistemi
-- ✅ Admin paneli iyileştirmeleri
-- ✅ Email bildirim sistemi
-- ✅ API güncellemeleri
-- ✅ Güvenlik iyileştirmeleri
-
-### v1.0.0
-- ✅ Temel kullanıcı sistemi
-- ✅ Proje yönetimi
-- ✅ Workshop sistemi
-- ✅ Admin paneli
-
----
 
 **Not**: Bu platform Artado Developers topluluğu için geliştirilmiştir. Katkıda bulunmak için lütfen GitHub repository'muzu ziyaret edin.
