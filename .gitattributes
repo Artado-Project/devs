@@ -4,7 +4,7 @@
 *.html linguist-vendored
 
 # Eğer özel klasörleriniz varsa (örneğin 'assets' veya 'public') onları da devre dışı bırakın
-assets/* linguist-vendored
+user/assets/* linguist-vendored
 public/css/* linguist-vendored
 public/js/* linguist-vendored
 
