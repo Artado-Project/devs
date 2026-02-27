@@ -1,7 +1,13 @@
-# Tüm JavaScript dosyalarını istatistiklerden çıkar
-*.js linguist-vendored
-
+# Tüm CSS, JS ve HTML dosyalarını istatistik dışı bırak
 *.css linguist-vendored
+*.js linguist-vendored
+*.html linguist-vendored
 
+# Eğer özel klasörleriniz varsa (örneğin 'assets' veya 'public') onları da devre dışı bırakın
 assets/* linguist-vendored
-dist/* linguist-generated
+public/css/* linguist-vendored
+public/js/* linguist-vendored
+
+# PHP dosyalarının kesinlikle PHP olarak sayılmasını sağla
+*.php linguist-detectable=true
+*.inc linguist-language=PHP
