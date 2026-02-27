@@ -67,7 +67,7 @@ FLUSH PRIVILEGES;
 ### Adım 2: Dosyaları Yükleme
 ```bash
 # Projeyi sunucuya yükleyin
-git clone [repository-url]
+git clone https://github.com/Artado-Project/devs
 cd devs
 ```
 
