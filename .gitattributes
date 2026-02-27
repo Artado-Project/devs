@@ -1,0 +1,7 @@
+# Tüm JavaScript dosyalarını istatistiklerden çıkar
+*.js linguist-vendored
+
+*.css linguist-vendored
+
+assets/* linguist-vendored
+dist/* linguist-generated
