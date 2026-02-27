@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Sunucu Hatası | Artado Developers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #fc4a1a 0%, #f7b733 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 0.6s ease-in;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-size: 160px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .error-icon {
+            font-size: 110px;
+            margin-bottom: 30px;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-right: 10px;
+        }
+
+        .btn-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-reload {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #fc4a1a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 1);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .btn-reload:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-report {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-left: 10px;
+        }
+
+        .btn-report:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .error-details {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .error-details h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            text-align: center;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .detail-item strong {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .detail-item ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .detail-item li {
+            margin-bottom: 5px;
+            opacity: 0.85;
+        }
+
+        .waves {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            z-index: 1;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E");
+            background-size: 50% 100%;
+            animation: wave 10s linear infinite;
+        }
+
+        .wave:nth-child(2) {
+            animation-delay: -5s;
+            opacity: 0.5;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 110px;
+            }
+
+            .error-icon {
+                font-size: 75px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btn-home, .btn-reload, .btn-report {
+                display: block;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="waves">
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="error-container">
+        <div class="error-icon">⚙️</div>
+        <div class="error-code">500</div>
+        <h1>Sunucu Hatası</h1>
+        
+        <div class="error-details">
+            <h3>📋 Hata Detayları</h3>
+            <div class="detail-item">
+                <strong>Hata Kodu:</strong> 500 Internal Server Error
+            </div>
+            <div class="detail-item">
+                <strong>Olay Zamanı:</strong> <span id="current-time"></span>
+            </div>
+            <div class="detail-item">
+                <strong>İstenen URL:</strong> <span id="requested-url"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Hata ID:</strong> <span id="error-id"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Olası Nedenler:</strong>
+                <ul>
+                    <li>Sunucu tarafında beklenmedik bir hata oluştu</li>
+                    <li>Veritabanı bağlantısı sorunu</li>
+                    <li>Servis geçici olarak kullanılamıyor</li>
+                    <li>Kaynak limitleri aşıldı</li>
+                    <li>Yapılandırma hatası</li>
+                </ul>
+            </div>
+            <div class="detail-item">
+                <strong>Çözüm Önerileri:</strong>
+                <ul>
+                    <li>Sayfayı yenileyin</li>
+                    <li>Daha sonra tekrar deneyin</li>
+                    <li>Tarayıcı önbelleğini temizleyin</li>
+                    <li>Farklı bir tarayıcı deneyin</li>
+                    <li>Destek ekibi ile iletişime geçin</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Üzgünüz, sunucuda bir hata oluştu. Teknik ekibimiz bu sorun üzerinde çalışıyor. Lütfen daha sonra tekrar deneyin.</p>
+        
+        <div class="button-group">
+            <a href="/devs/" class="btn-home">Ana Sayfaya Dön</a>
+            <button onclick="location.reload()" class="btn-reload">Sayfayı Yenile</button>
+            <a href="mailto:support@artado.xyz?subject=500%20Hata%20Bildirimi&body=Hata%20ID:%20" class="btn-report">Hata Bildir</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mevcut zamanı göster
+            const currentTime = new Date().toLocaleString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'Europe/Istanbul'
+            });
+            document.getElementById('current-time').textContent = currentTime;
+
+            // İstenen URL'yi göster
+            document.getElementById('requested-url').textContent = window.location.href;
+
+            // Benzersiz hata ID oluştur
+            const errorId = 'ERR-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            document.getElementById('error-id').textContent = errorId;
+
+            // Hata bildirim linkini güncelle
+            const reportLink = document.querySelector('.btn-report');
+            if (reportLink) {
+                reportLink.href = 'mailto:support@artado.xyz?subject=500%20Hata%20Bildirimi&body=Hata%20ID:%20' + errorId + '%0AURL:%20' + encodeURIComponent(window.location.href) + '%0ATarih:%20' + currentTime;
+            }
+        });
+    </script>
+</body>
+</html>

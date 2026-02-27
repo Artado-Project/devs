@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+Allow: /Workshop/
+Allow: /Workshop/index.php
+Allow: /Workshop/project.php
+
+# Ana dizin hassas dosyalar
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /vendor/
+Disallow: /config.php
+Disallow: /test_mail.php
+Disallow: /check_db.php
+Disallow: /migration.sql
+Disallow: /password_reset_migration.sql
+
+# Workshop hassas dosyalar
+Disallow: /Workshop/config.php
+Disallow: /Workshop/public/
+Disallow: /Workshop/*.sql
+Disallow: /Workshop/*.log
+Disallow: /Workshop/*.tmp
+
+# Sitemap'ler
+Sitemap: https://devs.artado.xyz/sitemap.xml
+Sitemap: https://devs.artado.xyz/Workshop/sitemap.xml
+
+# Crawl-delay (sunucuyu korumak için)
+Crawl-delay: 1

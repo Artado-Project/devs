@@ -1,0 +1,42 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Database backups
+*.sql
+*.db
+
+# Logs
+*.log
+error.log
+access.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Cache
+cache/
+*.cache
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node modules (if any)
+node_modules/
+
+# Vendor directories (if any)
+vendor/
+
+# Uploads that may contain sensitive data
+uploads/files/
+public/uploads/files/
