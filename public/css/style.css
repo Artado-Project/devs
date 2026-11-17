@@ -1,0 +1,53 @@
+
+/* Temel stiller */
+body {
+  font-family: sans-serif;
+}
+
+.topic-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.topic-info {
+  font-size: 0.9rem;
+  color: $secondary-color;
+  margin-bottom: 1rem;
+}
+
+.topic-content {
+  line-height: 1.6;
+}
+
+.topic-meta {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.topic-meta li {
+  margin-bottom: 0.5rem;
+}
+
+/* Buton stilleri */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+/* Diğer UI öğeleri */
+/* ... */

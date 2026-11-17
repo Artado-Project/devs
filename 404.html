@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Sayfa Bulunamadı | Artado Developers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 0.6s ease-in;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-size: 180px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% {
+                transform: translate(0);
+            }
+            20% {
+                transform: translate(-2px, 2px);
+            }
+            40% {
+                transform: translate(-2px, -2px);
+            }
+            60% {
+                transform: translate(2px, 2px);
+            }
+            80% {
+                transform: translate(2px, -2px);
+            }
+        }
+
+        .error-icon {
+            font-size: 100px;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-home:hover {
+            background: rgba(255, 255, 255, 0.35);
+            border-color: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-sitemap {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 5px;
+        }
+
+        .btn-sitemap:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #f093fb;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 1);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .error-details {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .error-details h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            text-align: center;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .detail-item strong {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .detail-item ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .detail-item li {
+            margin-bottom: 5px;
+            opacity: 0.85;
+        }
+
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .star {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .star:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+        .star:nth-child(2) { top: 40%; left: 60%; animation-delay: 0.5s; }
+        .star:nth-child(3) { top: 60%; left: 30%; animation-delay: 1s; }
+        .star:nth-child(4) { top: 80%; left: 70%; animation-delay: 1.5s; }
+        .star:nth-child(5) { top: 30%; left: 80%; animation-delay: 0.3s; }
+        .star:nth-child(6) { top: 70%; left: 15%; animation-delay: 0.8s; }
+        .star:nth-child(7) { top: 50%; left: 90%; animation-delay: 1.2s; }
+        .star:nth-child(8) { top: 10%; left: 50%; animation-delay: 0.6s; }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 120px;
+            }
+
+            .error-icon {
+                font-size: 70px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btn-home, .btn-sitemap, .btn-back {
+                display: block;
+                margin: 10px auto;
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <div class="error-container">
+        <div class="error-icon">🔍</div>
+        <div class="error-code">404</div>
+        <h1>Sayfa Bulunamadı</h1>
+        
+        <div class="error-details">
+            <h3>📋 Hata Detayları</h3>
+            <div class="detail-item">
+                <strong>Hata Kodu:</strong> 404 Not Found
+            </div>
+            <div class="detail-item">
+                <strong>Olay Zamanı:</strong> <span id="current-time"></span>
+            </div>
+            <div class="detail-item">
+                <strong>İstenen URL:</strong> <span id="requested-url"></span>
+            </div>
+            <div class="detail-item">
+                <strong>Referans URL:</strong> <span id="referrer-url">Yok</span>
+            </div>
+            <div class="detail-item">
+                <strong>Olası Nedenler:</strong>
+                <ul>
+                    <li>Sayfa taşınmış veya silinmiş olabilir</li>
+                    <li>URL adresi yanlış yazılmış olabilir</li>
+                    <li>Link bozuk olabilir</li>
+                    <li>Sayfa geçici olarak erişilemiyor olabilir</li>
+                </ul>
+            </div>
+            <div class="detail-item">
+                <strong>Öneriler:</strong>
+                <ul>
+                    <li>URL adresini kontrol edin</li>
+                    <li>Arama yapın</li>
+                    <li>Site haritasını kullanın</li>
+                    <li>Ana sayfaya dönün</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Aradığınız sayfa mevcut değil veya taşınmış olabilir. Lütfen URL'yi kontrol edin veya ana sayfaya dönün.</p>
+        
+        <div class="button-group">
+            <a href="/devs/" class="btn-home">Ana Sayfaya Dön</a>
+            <a href="/devs/sitemap.xml" class="btn-sitemap">Site Haritası</a>
+            <button onclick="history.back()" class="btn-back">Geri Git</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mevcut zamanı göster
+            const currentTime = new Date().toLocaleString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'Europe/Istanbul'
+            });
+            document.getElementById('current-time').textContent = currentTime;
+
+            // İstenen URL'yi göster
+            document.getElementById('requested-url').textContent = window.location.href;
+
+            // Referans URL'yi göster
+            const referrer = document.referrer;
+            document.getElementById('referrer-url').textContent = referrer || 'Yok';
+        });
+    </script>
+</body>
+</html>

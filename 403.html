@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 - Erişim Engellendi | Artado Developers</title>
+    <meta name="description" content="Bu sayfaya erişim izniniz bulunmamaktadır. Artado Developers platformunda yetkisiz erişim engellenmiştir.">
+    <meta name="keywords" content="403 hata, erişim engellendi, yetkisiz erişim, artado developers">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="403 - Erişim Engellendi | Artado Developers">
+    <meta property="og:description" content="Bu sayfaya erişim izniniz bulunmamaktadır.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devs.artado.xyz/403.html">
+    <meta property="og:site_name" content="Artado Developers">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@ArtadoL">
+    <meta name="twitter:title" content="403 - Erişim Engellendi">
+    <meta name="twitter:description" content="Bu sayfaya erişim izniniz bulunmamaktadır.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://devs.artado.xyz/403.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            animation: fadeIn 0.6s ease-in;
+            position: relative;
+            z-index: 10;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .error-code {
+            font-size: 150px;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .error-icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+            animation: shake 3s infinite;
+        }
+
+        @keyframes shake {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-5deg);
+            }
+            75% {
+                transform: rotate(5deg);
+            }
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            margin-right: 10px;
+        }
+
+        .btn-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-login {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 1);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-login:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-support {
+            display: inline-block;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-support:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .error-details {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            text-align: left;
+        }
+
+        .error-details h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            opacity: 0.95;
+            text-align: center;
+        }
+
+        .detail-item {
+            margin-bottom: 12px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .detail-item strong {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .detail-item ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+
+        .detail-item li {
+            margin-bottom: 5px;
+            opacity: 0.85;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            50% {
+                transform: translateY(-100px) translateX(50px);
+            }
+        }
+
+        .particle:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 60px; height: 60px; left: 30%; animation-delay: 2s; }
+        .particle:nth-child(3) { width: 100px; height: 100px; left: 50%; animation-delay: 4s; }
+        .particle:nth-child(4) { width: 70px; height: 70px; left: 70%; animation-delay: 1s; }
+        .particle:nth-child(5) { width: 90px; height: 90px; left: 85%; animation-delay: 3s; }
+
+        .info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-box h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            opacity: 0.95;
+        }
+
+        .info-box p {
+            font-size: 16px;
+            margin-bottom: 0;
+            opacity: 0.85;
+        }
+
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 100px;
+            }
+
+            .error-icon {
+                font-size: 80px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .btn-home, .btn-login, .btn-support {
+                display: block;
+                margin: 10px auto;
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="error-container">
+        <div class="error-icon">🔒</div>
+        <div class="error-code">403</div>
+        <h1>Erişim Engellendi</h1>
+        
+        <div class="info-box">
+            <h3>🛡️ Bu Sayfaya Erişim İzniniz Yok</h3>
+            <p>Bu sayfa sadece yetkili kullanıcılar için erişilebilir. Lütfen giriş yapın veya yönetici ile iletişime geçin.</p>
+        </div>
+
+        <div class="error-details">
+            <h3>📋 Hata Detayları</h3>
+            <div class="detail-item">
+                <strong>Hata Kodu:</strong> 403 Forbidden
+            </div>
+            <div class="detail-item">
+                <strong>Olay Zamanı:</strong> <span id="current-time"></span>
+            </div>
+            <div class="detail-item">
+                <strong>IP Adresi:</strong> <span id="user-ip">Belirleniyor...</span>
+            </div>
+            <div class="detail-item">
+                <strong>İstenen URL:</strong> <span id="requested-url">Belirleniyor...</span>
+            </div>
+            <div class="detail-item">
+                <strong>Olası Nedenler:</strong>
+                <ul>
+                    <li>Bu sayfaya erişim yetkiniz bulunmuyor</li>
+                    <li>Oturumunuz süresi dolmuş olabilir</li>
+                    <li>Yanlış kullanıcı rolüne sahipsiniz</li>
+                    <li>IP adresiniz engellenmiş olabilir</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Üzgünüz, bu içeriğe erişim için gerekli izinlere sahip değilsiniz. Artado Developers platformunda güvenliğiniz bizim için önemlidir.</p>
+        
+        <div class="button-group">
+            <a href="/devs/" class="btn-home">Ana Sayfaya Dön</a>
+            <a href="/devs/login.php" class="btn-login">Giriş Yapın</a>
+            <a href="mailto:support@artado.xyz" class="btn-support">Destek İste</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mevcut zamanı göster
+            const currentTime = new Date().toLocaleString('tr-TR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                timeZone: 'Europe/Istanbul'
+            });
+            document.getElementById('current-time').textContent = currentTime;
+
+            // İstenen URL'yi göster
+            document.getElementById('requested-url').textContent = window.location.href;
+
+            // IP adresini göster (client-side)
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('user-ip').textContent = data.ip;
+                })
+                .catch(error => {
+                    document.getElementById('user-ip').textContent = 'Alınamadı';
+                });
+        });
+    </script>
+</body>
+</html>

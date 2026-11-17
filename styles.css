@@ -1,0 +1,179 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: url('hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero .btn {
+    background-color: #ff6363;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Kartlar */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px;
+}
+
+.feature-card {
+    text-align: center;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+/* Formlar */
+.login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.login-form input,
+.login-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #555;
+    color: #fff;
+}
+
+.login-form button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff6363;
+    color: white;
+    cursor: pointer;
+}
+
+/* Proje Sayfası */
+.projects {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    background-color: #2e2e2e;
+}
+
+.project-list {
+    width: 80%;
+    padding: 20px;
+}
+
+.project-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.project-item img {
+    height: 50px;
+}
+
+.project-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.project-info h3 {
+    margin: 0;
+}
+
+.faq-content {
+    display: none; /* Başlangıçta içerikler gizli */
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+.faq-title {
+    cursor: pointer;
+    background-color: #252424;
+    padding: 10px;
+    border: 1px solid #2e2b2b;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+footer {
+    background-color: #222222;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-link {
+    color: #3498db;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+    }
+
+    .product-item {
+        width: 100%;
+    }
+}
